@@ -1,0 +1,313 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(-35deg, #afdde5 -6%, #0fa4af 17%, transparent 39%),
+                linear-gradient(120deg, transparent -11%, #0fa4af 6%, #afdde5 34%);
+    font-family: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; 
+    overflow-y: scroll;
+    scroll-timeline-name: --squareTimeline;
+    position: relative;
+    background-size: cover; 
+    background-attachment: fixed; 
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.animation-item {
+    margin: 1rem 0;
+}
+
+#home {
+    margin-bottom: 40px;
+}
+
+#about {
+    height: 300px;
+    overflow-y: auto;
+    scroll-timeline-name: --squareTimeline;
+    position: relative;
+}
+
+#square {
+    background-color: #003135;
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    animation-name: rotateAnimation;
+    animation-duration: 1ms;
+    animation-direction: alternate;
+    animation-timeline: --squareTimeline;
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#stretcher {
+    height: 600px;
+}
+
+.typewriter h2 {
+    font-family: Arial, sans-serif; /* Set a default font */
+    overflow: hidden; 
+    border-right: .35em solid #003135; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 25% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    25% { border-color: #003135; }
+}
+
+.subject {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #003135;
+}
+
+.content {
+    padding-inline: 100px;
+    padding-top: 50px;
+}
+
+p, h1 {
+    font-family: auto;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.animation {
+    animation-timeline: view();
+    animation-name: appear;
+    animation-fill-mode: both;
+    animation-duration: 1ms; 
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+#experience {
+    padding: 2rem;
+    text-align: center;
+}
+
+#experience h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #003135;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+}
+
+.experience-card {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px; 
+}
+
+.experience-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.experience-card:hover .experience-card-inner {
+    transform: rotateY(180deg);
+}
+
+.experience-card-front {
+    background: #024950;
+}
+
+.experience-card-front, 
+.experience-card-back {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-card-back {
+    transform: rotateY(180deg);
+    background: #003135;
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #fff;
+}
+
+.experience-card p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.experience-card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+#contact {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    animation: fadeInUp 1s ease-out;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.contact-info-item {
+    flex: 1;
+    max-width: 250px;
+    padding: 1rem;
+    background: #024950;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.contact-info-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-item i {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+    margin: 0;
+    color: #fff;
+}
+
+.contact-info-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info-item a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
